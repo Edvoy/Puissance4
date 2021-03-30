@@ -5,9 +5,9 @@ le pion coulisse alors jusqu'à la position la plus basse possible dans la dite 
 Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur.
 Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.
 
-1: Déterminer les contraines = définis les structures de données
-2: Rédaction du pseudo code (en modules)
-3: Définir un ordre de création des modules
+1: Déterminer les contraines = définis les structures de données.
+2: Rédaction du pseudo code (en modules).
+3: Définir un ordre de création des modules.
 
 Pseudo-code python:
 - Plateau 7*6   
