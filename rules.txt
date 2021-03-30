@@ -1,0 +1,67 @@
+Le but du jeu est d'aligner une suite de 4 pions de même couleur sur une grille comptant 6 rangées et 7 colonnes.
+Chaque joueur dispose de 21 pions d'une couleur (par convention, en général jaune ou rouge).
+Tour à tour, les deux joueurs placent un pion dans la colonne de leur choix,
+le pion coulisse alors jusqu'à la position la plus basse possible dans la dite colonne à la suite de quoi c'est à l'adversaire de jouer.
+Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) consécutif d'au moins quatre pions de sa couleur.
+Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.
+
+1: Déterminer les contraines = définis les structures de données
+2: Rédaction du pseudo code (en modules)
+3: Définir un ordre de création des modules
+
+Pseudo-code python:
+- Plateau 7*6   
+                [   [][]
+                    [][]    ]   <- double array
+                Afficher()
+
+                Est_libre(X):
+                    Si (X est libre):
+                        True
+                    Sinon:
+                        False
+
+                - Placer():
+                    Compteur
+                    Tant que Est_libre(X) est Vrai:
+                        Compteur += 1
+                        Continuer
+                    Placer Pion a Compteur - 1
+
+- Pions         
+                Nombre_de_pions: (21 max)
+                color:          <- dict
+    
+
+- Joueur
+    Pions
+    Jouer(X):
+        Si (Ligne[0][X] est libre):
+            place un pion aux coordonees X
+        Sinon : 
+            Afficher un message d'erreur
+
+Demander nom et symbole Joueur1 et nom et symbole Joueur2
+
+Tant qu'il n'y a pas de joueur gagnant OU qu'il reste de la place sur le Plateau :
+    Afficher le Plateau
+    Joueur X pose sa piece
+    Afficher le Plateau
+    Si un joueur est gagnant:
+        Afficher le nom gagnant
+    Si il n'y a plus de place:
+        Match nul
+
+0 [][ ][][J][][][]
+1 [][ ][][J][][][]
+2 [][R][][J][][][]
+3 [][J][][R][][][]
+4 [][R][][J][][][]
+5 [][R][][J][][][]
+   0 1 2 3 4 5 6
+
+Modules:
+    1/ Plateau
+    2/ Placer()
+    3/ Est_libre
+    4/ Joueur.Jouer()
