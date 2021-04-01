@@ -1,0 +1,74 @@
+Lire le fichier suivant contenant la map avec les delimiteurs et le caractere vide
+Si aux ligne de definitions des joueur on a le parametre par defaut toujours present commencer une partie avec joueur_1 A et joueur joueur_2 B
+Tous les commentaires doivent etre affiche pendant la lecture du fichier
+
+joueur_X;couleur
+
+[] 
+[ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ]
+[ ][ ][ ][ ][ ][ ][ ]
+
+joueur_1;couleur
+joueur_2;couleur #Commentaire
+
+On peut aussi commencer une partie avec des noms de joueurs deja definis :
+
+.[w
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+
+BABA;T
+TOTO;U #Commentaire
+
+Pour lire les fichiers on doit pouvoir passer en argument du programme le fichier, exemple :
+python ./power_4 -f/--file fichier_de_jeu.txt
+
+Le deroulement normal du programme :
+python ./power_4 -n/--normal [skip]
+    Entrez le nom du joueur A: 
+    Choisir le jeton
+    Entrez le nom du joueur B:
+    Choisir le jeton
+    
+    le parametre optionel skip permet de "passer" X tours d'affichage tout en nettoyant la console
+
+python ./power_4 -r/--random (-f [file]|-n [skip])
+    A chaque tour on va placer de maniere aleatoire sur la map un jeton du joueur
+
+python ./power_4 -t/--test-file [file] 
+    On passe un fichier map deja rempli, dans lequel un gagnant est deja declare, il faudra verifier si c'est bien le cas
+
+Une fin de Partie s'affiche de cette maniere:
+
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.w[.w[.w[
+.w[.w[.w[.w[.G[.w[.w[
+.w[.w[.w[.w[.G[.w[.w[
+.w[.w[.w[.w[.G[.w[.w[
+.w[.7[.7[.7[.G[.w[.w[
+
+BABA a gagne!
+
+il doit etre possible de faire une sauvegarde de la partie un -s/--save est fourni en argument du programme
+
+Limitations:
+Aucun erreur de ne sera tolere 
+    Pas d'unbound
+    nom de joueur: [\w]+
+Fonctions authorisees:
+    os.open()
+    os.close()
+    os.read()
+    os.write()
+    sys.argv
+    math.rand()
+    re.match()
+    clear
